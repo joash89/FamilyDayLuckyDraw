@@ -169,9 +169,17 @@
 
     .main-grid {
       display: grid;
-      grid-template-columns: minmax(310px, 400px) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(310px, 400px);
       gap: 24px;
       align-items: stretch;
+    }
+
+    .main-grid .wheel-panel {
+      order: 1;
+    }
+
+    .main-grid .control-panel {
+      order: 2;
     }
 
     .panel {
@@ -654,6 +662,8 @@
 
     @media (max-width: 900px) {
       .main-grid { grid-template-columns: 1fr; }
+      .main-grid .wheel-panel { order: 1; }
+      .main-grid .control-panel { order: 2; }
       .wheel-panel { order: 1; min-height: auto; }
       .control-panel { order: 2; }
       textarea { min-height: 240px; }
